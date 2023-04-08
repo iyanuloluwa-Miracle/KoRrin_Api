@@ -11,6 +11,8 @@ exports.sendInvite = async (req, res) => {
   if (isNaN(price) || price <= 0) {
     return res.status(400).json({ error: 'Please set a valid price' });
   }
+
+  console.log(`Fan: ${fan}, Price: ${price}`);
   
   // Redirect the user to a new page
   res.redirect(`/newPage?fan=${fan}&price=${price}`);
