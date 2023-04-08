@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const sendInviteController = require('./controllers/sendInvite.controller');
-const newPageController = require('./controllers/newPage.controller');
+const sendInviteController = require('./sendInvite.controller');
+const newPageController = require('./newPage.controller');
 
 // Define the route for sending an invite
 router.post('/sendInvite', sendInviteController.sendInvite);
