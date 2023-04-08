@@ -9,6 +9,6 @@ exports.newPage = async(req, res) =>{
     }
   
     // Render the new page with the fan and price parameters
-    res.send(`Hey Damilola just sent an Invite`);
+    res.send(`Hey Damilola just sent an Invite`)
   }
   
