@@ -1,4 +1,4 @@
-const express = require('express')
+
 
 
 exports.sendInvite = async (req, res) => {
@@ -28,10 +28,10 @@ exports.newPage = async(req, res) =>{
     const fan = req.query.fan;
     const price = req.query.price;
 
-
-   // Check if fan and price are defined
-   if (!fan || !price) {
-    res.send('Error: Fan and price parameters are missing');
+   // Check if fan, price, and fanName are defined
+   const fanName = req.query.fanName;
+   if (!fan || !price || !fanName) {
+    res.send('Error: Fan, price, and fanName parameters are missing');
     return;
   }
   // Check if price is not empty
@@ -40,7 +40,8 @@ exports.newPage = async(req, res) =>{
     return;
   }
 
-  // Render the new page with the fan and price parameters
-  res.send(`Hey Damilola, you just sent invite to your fan`);
+  // Render the new page with the fan, fanName, and price parameters
+  res.send(`Hey Damilola just sent an Invite `);
 
 }
+
