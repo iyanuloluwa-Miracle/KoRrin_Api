@@ -2,19 +2,16 @@ exports.sendInvite = async (req, res) => {
   const fan = req.body.fan;
   const price = req.body.price;
   
-    // Check if a fan was selected
+  // Check if a fan was selected
   if (!fan) {
-    res.send('Please, Select at least one Fan');
-    return;
+    return res.status(400).json({ error: 'Please select at least one fan' });
   }
   
-    // Check if the price is valid
+  // Check if the price is valid
   if (isNaN(price) || price <= 0) {
-    res.send('Please set Price');
-    return;
+    return res.status(400).json({ error: 'Please set a valid price' });
   }
   
-    // Redirect the user to a new page
+  // Redirect the user to a new page
   res.redirect(`/newPage?fan=${fan}&price=${price}`);
 }
-  
