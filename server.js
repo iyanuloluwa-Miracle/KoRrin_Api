@@ -8,6 +8,11 @@ app.use(express.urlencoded({ extended: false }));
 // Set up routes
 app.use('/', routes);
 
+// Define a route for the root URL
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 // Start the server
 const PORT = process.env.PORT || 3005;
 app.listen(PORT, () => {
