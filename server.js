@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const port= process.env.PORT || 3000 
 
-app.use('/api', router)
+app.use('/api/user', router)
 
 // Start the server
 
