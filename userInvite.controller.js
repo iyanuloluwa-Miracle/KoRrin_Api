@@ -12,8 +12,8 @@ exports.sendInvite = async (req, res) => {
     return res.status(400).json({ error: 'Please set a valid price' });
   }
 
-  console.log(`Fan: ${fan}, Price: ${price}`);
+  
   
   // Redirect the user to a new page
-  res.redirect(`/newPage?fan=${fan}&price=${price}`);
+  res.send('Hey Damilola you just sent an Invite to your fans');
 }
